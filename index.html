@@ -2,7 +2,7 @@
 <head>
   <title>#PEHYPE</title>
   <style>
-    // Change the colors
+    /* Change the colors */
 $color1: red;
 $color2: blue;
 
@@ -10,28 +10,28 @@ $color2: blue;
   overflow: hidden;
   position: relative;
   
-  // The blend modes mute the colors, so let's bump them up
+  /* The blend modes mute the colors, so let's bump them up */
   filter: contrast(110%) brightness(190%);
 }
 
 .neon {
   position: relative;
   
-  // Only works on a black background, sorry
+  /* Only works on a black background, sorry */
   background: black;
   
-  // The actual text inside the div is superfluous, only data-text matters. The text is added so you can easily edit the preview
+  /* The actual text inside the div is superfluous, only data-text matters. The text is added so you can easily edit the preview */
   color: transparent;
   
   &::before,
   &::after {
-    // Add two copies of the text on their own layer
+    /* Add two copies of the text on their own layer */
     content: attr(data-text);
     
-    // White, so we can paint them later
+    /* White, so we can paint them later */
     color: white;
     
-    // And blur them to create the neon effect with the blend-mode below
+    /* And blur them to create the neon effect with the blend-mode below */
     filter: blur(0.02em);
     
     position: absolute;
@@ -39,13 +39,13 @@ $color2: blue;
     pointer-events: none;
   }
   
-  // Set the top copy to difference. This creates the knock-out effect with a bit of glow
+  /* Set the top copy to difference. This creates the knock-out effect with a bit of glow */
   &::after {
     mix-blend-mode: difference;
   }
 }
 
-// Position our two effect layers
+/* Position our two effect layers */
 .gradient,
 .spotlight {
   position: absolute;
@@ -54,24 +54,24 @@ $color2: blue;
   z-index: 10;  
 }
 
-// Add the colors
+/* Add the colors */
 .gradient {
   background: linear-gradient(45deg, $color1, $color2);
   
-  // Multiply mode will paint only the white text
+  /* Multiply mode will paint only the white text */
   mix-blend-mode: multiply;
 }
 
 .spotlight {
   animation: light 5s infinite linear;
   
-  // These are the lights, color-dodge needs a black bg for optimum effect
+  /* These are the lights, color-dodge needs a black bg for optimum effect */
   background: 
     radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, 
     radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
   top: -100%; left: -100%;
   
-  // Color dodge gives the lights that shimmer effect
+  /* Color dodge gives the lights that shimmer effect */
   mix-blend-mode: color-dodge;
 }
 
@@ -81,9 +81,9 @@ $color2: blue;
   }
 }
 
-//=== Pen styling, ignore
+/* Pen styling, ignore
 
-// Style text
+Style text */
 .neon {
   font: 700 220px 'Lato', sans-serif;
   text-transform: uppercase;
@@ -93,7 +93,7 @@ $color2: blue;
   &:focus { outline: none; border: 1px dotted white; }
 }
 
-// Center everything
+/* Center everything */
 body {
   background: black;
   display: flex;

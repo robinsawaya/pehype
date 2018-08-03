@@ -15,7 +15,7 @@
   color: transparent;
 }
 .neon::before, .neon::after {
-  content: attr(data-text);
+  content: attr(datatext);
   color: white;
   -webkit-filter: blur(0.02em);
           filter: blur(0.02em);
@@ -91,7 +91,11 @@ body {
 </head>
 <body>
 <div class="text-effect">
-    <script>
+
+  <!-- Select the text in the preview and type in your own -->
+  <h1 class="neon" datatext="#PEHYPE">#PEHYPE</h1>
+  <p class="neon" datatext="" id="demo"></p>
+      <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Aug 13, 2018 03:00:00").getTime();
 
@@ -113,6 +117,8 @@ var x = setInterval(function() {
     // Output the result in an element with id="demo"
     document.getElementById("demo").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
+      document.getElementById("demo").datatext = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
     if (distance < 0) {
@@ -121,9 +127,6 @@ var x = setInterval(function() {
     }
 }, 1000);
 </script>
-  <!-- Select the text in the preview and type in your own -->
-  <h1 class="neon" data-text="#PEHYPE">#PEHYPE</h1>
-  <p class="neon" data-text="#PEHYPE" id="demo"></p>
   <div class="gradient"></div>
   <div class="spotlight"></div>
 </div>

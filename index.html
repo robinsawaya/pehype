@@ -91,14 +91,7 @@ body {
 </head>
 <body>
 <div class="text-effect">
-  <!-- Select the text in the preview and type in your own -->
-  <h1 class="neon" datatext="#PEHYPE">#PEHYPE</h1>
-  <div class="gradient"></div>
-  <div class="spotlight"></div>
-</div>
-	
-<div class="text-effect">
-       <script>
+	       <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Aug 13, 2018 03:00:00").getTime();
 
@@ -118,22 +111,27 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+	var date = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
-      document.getElementById("demo").datatext = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML = date;
+    document.getElementById("demo").setAttribute(date);
     
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "IT'S HAPPENING";
+        document.getElementById("demo").innerHTML = "IT'S HAPPENING!!!";
     }
 }, 1000);
 </script>
-  <h3 class="neon" id="demo" datatext=""></h3>
+
+  <!-- Select the text in the preview and type in your own -->
+  <h1 class="neon" datatext="#PEHYPE">#PEHYPE</h1>
+	<br>
+	  <h3 class="neon" id="demo" datatext=""></h3>
   <div class="gradient"></div>
   <div class="spotlight"></div>
-	</div>
+</div>
+
 	
 </body>
 </html>

@@ -114,7 +114,7 @@ var x = setInterval(function() {
 	var date = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
     document.getElementById("demo").innerHTML = date;
-    document.getElementById("demo").setAttribute(date);
+    document.getElementById("demo").setAttribute("datatext", date);
     
     // If the count down is over, write some text 
     if (distance < 0) {
